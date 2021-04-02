@@ -8,12 +8,14 @@ export const Container = styled.div`
     width: 70vw;
     height: 100vh;
 
+    margin-top: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     input {
       width: 500px;
+      margin-bottom: 10px;
       padding: 1.2rem;
       border-radius: 5px;
       border: 0;

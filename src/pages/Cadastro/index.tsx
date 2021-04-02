@@ -11,17 +11,18 @@ interface Errors {
 }
 
 const Cadastro: React.FC = () => {
-  //referenciando ao formulario
+  // referenciando ao formulario
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(async (data) => {
+  const handleSubmit = useCallback(async data => {
     try {
       // resetando os erros
       formRef.current?.setErrors({});
 
-      //validando os dados
+      // validando os dados
       const schema = Yup.object().shape({
         name: Yup.string().required('Nome obrigatório'),
+        telefone: Yup.string().required('Telefone obrigatório'),
         email: Yup.string()
           .required('E-mail obrigatório')
           .email('Digite um e-mail válido'),
@@ -34,7 +35,7 @@ const Cadastro: React.FC = () => {
         }),
       });
 
-      //passando os dados para o schema validar os inputs
+      // passando os dados para o schema validar os inputs
       await schema.validate(data, {
         abortEarly: false,
       });
@@ -46,7 +47,7 @@ const Cadastro: React.FC = () => {
         const errorMessages: Errors = {};
 
         // percorrendo os errors localizados no form
-        err.inner.forEach((error) => {
+        err.inner.forEach(error => {
           // add o erros na lista
           errorMessages[error.path] = error.message;
         });
@@ -60,6 +61,7 @@ const Cadastro: React.FC = () => {
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
         <Input name="name" type="text" placeholder="Nome" />
+        <Input name="telefone" type="text" placeholder="Telefone" />
         <Input name="email" type="text" placeholder="E-mail" />
         <Input name="password" type="password" placeholder="Senha" />
 

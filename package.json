@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-br-forms/cpf-cnpj-mask": "^1.0.6",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -18,14 +19,16 @@
     "react": "^16.13.1",
     "react-day-picker": "^7.4.8",
     "react-dom": "^16.13.1",
+    "react-hook-form": "^6.15.1",
     "react-icons": "^3.10.0",
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27",
+    "remask": "^0.1.0-alpha.5",
     "styled-components": "^5.1.0",
     "typescript": "~3.7.2",
-    "uuidv4": "^6.0.7",
+    "vanilla-masker": "^1.2.0",
     "yup": "^0.28.4"
   },
   "scripts": {
